@@ -3,13 +3,14 @@ import Image from "next/image";
 import styles from "./layout.module.scss";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
+import { Container } from "@chakra-ui/react";
 
 const name = "Jonathas Souza";
 export const siteTitle = "Next.js Sample Website";
 
 export default function Layout({ children, home }) {
   return (
-    <div className={styles.container}>
+    <Container maxW={{ base: "100%", lg: "71rem" }}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -68,6 +69,6 @@ export default function Layout({ children, home }) {
           </Link>
         </div>
       )}
-    </div>
+    </Container>
   );
 }
