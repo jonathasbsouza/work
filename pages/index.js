@@ -1,8 +1,10 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
 import HeroGrid from "../components/heroGrid";
-import utilStyles from "../styles/utils.module.css";
-import { Button, ButtonGroup } from "@chakra-ui/react";
+
+import theme from "../styles/theme";
+import { Box } from "@chakra-ui/react";
+import BaseContainer from "../components/BaseContainer";
 
 export default function Home() {
   return (
@@ -10,13 +12,21 @@ export default function Home() {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <HeroGrid />
-      <section className={utilStyles.headingMd}>
-        <p>
-          (This is a sample website - you’ll be building a site like this on{" "}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
-      </section>
+      <BaseContainer>
+        <HeroGrid />
+      </BaseContainer>
+      <Box
+        sx={{
+          backgroundColor: theme.colors.fauxblack,
+        }}
+      >
+        <BaseContainer>
+          <p>
+            (This is a sample website - you’ll be building a site like this on{" "}
+            <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+          </p>
+        </BaseContainer>
+      </Box>
     </Layout>
   );
 }

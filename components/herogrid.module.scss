@@ -1,5 +1,6 @@
 .grid {
-  height: 800px;
+  padding-top: 8rem;
+  height: 720px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -10,7 +11,7 @@
     "Img1 Img1 Title Title Title"
     "Img1 Img1 Img2 Img2 Img3"
     "Img1 Img1 Img2 Img2 Img3"
-    ". . Img2 Img2 Img4"
+    "Img1 Img1 Img2 Img2 Img4"
     ". . Img2 Img2 .";
 }
 
@@ -22,7 +23,7 @@
 .img1 {
   @include gridImg;
   grid-area: Img1;
-  background-image: url("/images/eu.png");
+  background-image: url("/images/hero/heroimg_1.jpg");
 }
 
 .img2 {
