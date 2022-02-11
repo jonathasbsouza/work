@@ -1,0 +1,49 @@
+.grid {
+  height: 800px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Img1 Img1 . . ."
+    "Img1 Img1 Title Title Title"
+    "Img1 Img1 Img2 Img2 Img3"
+    "Img1 Img1 Img2 Img2 Img3"
+    ". . Img2 Img2 Img4"
+    ". . Img2 Img2 .";
+}
+
+@mixin gridImg {
+  background-position: center center;
+  background-size: cover;
+}
+
+.img1 {
+  @include gridImg;
+  grid-area: Img1;
+  background-image: url("/images/eu.png");
+}
+
+.img2 {
+  @include gridImg;
+  grid-area: Img2;
+  background-image: url("/images/eu.png");
+}
+
+.img3 {
+  @include gridImg;
+  grid-area: Img3;
+  background-image: url("/images/eu.png");
+}
+
+.img4 {
+  @include gridImg;
+  grid-area: Img4;
+  background-image: url("/images/eu.png");
+}
+
+.title {
+  grid-area: Title;
+  padding: 1rem;
+}
