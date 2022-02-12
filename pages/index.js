@@ -7,6 +7,7 @@ import { Box, Button, Stack, Heading, Text, Image } from "@chakra-ui/react";
 import BaseContainer from "../components/BaseContainer";
 
 import { useMediaQuery } from "@chakra-ui/react";
+import WorkPost from "../components/WorkPost";
 
 export default function Home() {
   const [isDesktop] = useMediaQuery("(min-width: 960px)");
@@ -74,7 +75,7 @@ export default function Home() {
       </Box>
       <Box id="work" py={["4rem", "10rem"]}>
         <BaseContainer>
-          <Stack direction={["column", "row"]} spacing="3rem">
+          <Stack direction={["column", "row"]} spacing="4rem">
             <Stack
               direction="column"
               spacing={["1rem", "2rem"]}
@@ -91,8 +92,30 @@ export default function Home() {
               </Text>
               <Button colorScheme="blue">Let's talk</Button>
             </Stack>
-            <Box flex="4" bg="tomato">
-              <Text>Box 3</Text>
+            <Box flex="4">
+              <Stack direction="column" spacing={16} align="stretch">
+                <WorkPost
+                  year="2022"
+                  company="Remessa Online"
+                  title="Easy signup for companies to send money abroad"
+                  description="How can students create better health habits, improving their lives?"
+                  thumb="images/work/work_thumb.jpg"
+                />
+                <WorkPost
+                  year="2021"
+                  company="VTEX"
+                  title="Easing money distribution in collaborative commerce"
+                  description="How can students create better health habits, improving their lives?"
+                  thumb="images/work/work_thumb.jpg"
+                />
+                <WorkPost
+                  year="2020"
+                  company="VTEX"
+                  title="Helping ecommerces to choose and configure their payment processors"
+                  description="How can students create better health habits, improving their lives?"
+                  thumb="images/work/work_thumb.jpg"
+                />
+              </Stack>
             </Box>
           </Stack>
         </BaseContainer>
