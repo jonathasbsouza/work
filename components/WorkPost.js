@@ -18,7 +18,7 @@ export default function WorkPost({
 }) {
   return (
     <Stack align="center" direction={["column", "row"]} spacing={"1.5rem"}>
-      <Image maxW="50%" objectFit="cover" src={thumb} alt="Thumb" />
+      <Image maxW={["100%", "50%"]} objectFit="cover" src={thumb} alt="Thumb" />
       <Box>
         <Text fontSize="xs" marginBottom={4}>
           {company}, {year}

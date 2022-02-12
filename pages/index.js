@@ -21,16 +21,16 @@ export default function Home() {
         <HeroGrid />
       </BaseContainer>
       <Box
-        id="whoami"
+        id="work"
         bg={theme.colors.lightBeige}
         pt={["8rem", "22rem"]}
-        pb="4rem"
+        pb={["4rem", "0"]}
         mt={["-5rem", -267]}
       >
         <BaseContainer>
           <Stack align="center" direction={["column", "row"]} spacing="3rem">
             <Image
-              maxW="30%"
+              maxW="40%"
               objectFit="cover"
               src="/images/eu.jpg"
               alt="Jonathas Souza"
@@ -40,34 +40,18 @@ export default function Home() {
               <Heading as="h2" size="md">
                 Who am I
               </Heading>
-              <Stack
-                direction={["column", "row"]}
-                justify="center"
-                spacing="2rem"
-              >
-                <Box flex={1}>
-                  <Text fontSize="sm" mb={4}>
-                    In 10 years, I've worked in a lot of design disciplines, as
-                    Graphic, Editorial and Product Design. Here is some examples
-                    of this experience. In 10 years, I've worked in a lot of
-                    design disciplines, as Graphic, Editorial and Product
-                    Design. Here is some examples of this experience. In 10
-                    years, I've worked in a lot of design disciplines, as
-                    Graphic, Editorial and Product Design. Here is some examples
-                    of this experience.
-                  </Text>
-                  <Button colorScheme="blue">My work</Button>
-                </Box>
-                <Box flex={1}>
-                  <Text fontSize="sm" mb={6}>
-                    In 10 years, I've worked in a lot of design disciplines, as
-                    Graphic, Editorial and Product Design. Here is some examples
-                    of this experience. In 10 years, I've worked in a lot of
-                    design disciplines, as Graphic, Editorial and Product
-                    Design. Here is some examples of this experience.
-                  </Text>
-                  <Button colorScheme="blue">Work principles</Button>
-                </Box>
+              <Text fontSize="sm" mb={4}>
+                In 10 years, I've worked in a lot of design disciplines, as
+                Graphic, Editorial and Product Design. Here is some examples of
+                this experience. In 10 years, I've worked in a lot of design
+                disciplines, as Graphic, Editorial and Product Design. Here is
+                some examples of this experience. In 10 years, I've worked in a
+                lot of design disciplines, as Graphic, Editorial and Product
+                Design. Here is some examples of this experience.
+              </Text>
+              <Stack direction="row" spacing="1rem">
+                <Button colorScheme="blue">My work</Button>
+                <Button colorScheme="blue">Work principles</Button>
               </Stack>
             </Stack>
           </Stack>
@@ -90,7 +74,6 @@ export default function Home() {
                 Graphic, Editorial and Product Design. Here is some examples of
                 this experience.
               </Text>
-              <Button colorScheme="blue">Let's talk</Button>
             </Stack>
             <Box flex="4">
               <Stack direction="column" spacing={16} align="stretch">
