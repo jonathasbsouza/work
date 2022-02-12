@@ -31,8 +31,9 @@ export default function Home() {
             <Image
               maxW="30%"
               objectFit="cover"
-              src="/images/eu.png"
-              alt="Dan Abramov"
+              src="/images/eu.jpg"
+              alt="Jonathas Souza"
+              d={["none", "flex"]}
             />
             <Stack direction="column" spacing={["1rem", "2rem"]}>
               <Heading as="h2" size="md">

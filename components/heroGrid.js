@@ -23,9 +23,9 @@ export default function HeroGrid() {
         <Image
           mt="2rem"
           w="100%"
-          h="300px"
+          h="auto"
           objectFit="cover"
-          src="/images/eu.png"
+          src="/images/hero/heroimg_mobile.jpg"
           alt="Dan Abramov"
         />
       </div>
