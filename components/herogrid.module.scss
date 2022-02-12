@@ -1,9 +1,9 @@
 .grid {
-  padding-top: 8rem;
+  padding-top: 2rem;
   height: 840px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1.5fr 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
@@ -13,6 +13,10 @@
     "Img1 Img1 Img2 Img2 Img3"
     "Img1 Img1 Img2 Img2 Img4"
     ". . Img2 Img2 .";
+
+  @media screen and (max-width: 960px) {
+    display: none;
+  }
 }
 
 @mixin gridImg {
@@ -46,5 +50,13 @@
 
 .title {
   grid-area: Title;
-  padding: 1rem;
+  padding: 1.5rem;
+}
+
+.mobile {
+  padding-top: 8rem;
+
+  @media screen and (min-width: 961px) {
+    display: none;
+  }
 }

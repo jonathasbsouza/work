@@ -1,17 +1,18 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "./layout.module.scss";
-import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import Navbar from "./navbar";
+import { Box } from "@chakra-ui/react";
+import BaseContainer from "../components/BaseContainer";
+
+import theme from "../styles/theme";
 
 const name = "Jonathas Souza";
-export const siteTitle = "Next.js Sample Website";
+export const siteTitle = "Jônathas Souza | Product Designer";
 
 export default function Layout({ children, home }) {
   return (
     <>
-      <Navbar />
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -27,9 +28,20 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
+      <Navbar />
       <main>{children}</main>
+      <Box bg={theme.colors.fauxblack} color="white" py="1.5rem">
+        <BaseContainer>
+          <p>
+            reach me at{" "}
+            <a fontWeight="500" href="mailto:jonathasbsouza@gmail.com">
+              jonathasbsouza@gmail.com
+            </a>
+          </p>
+        </BaseContainer>
+      </Box>
       {!home && (
-        <div className={styles.backToHome}>
+        <div>
           <Link href="/">
             <a>← Back to home</a>
           </Link>

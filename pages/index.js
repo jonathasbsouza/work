@@ -3,10 +3,14 @@ import Layout, { siteTitle } from "../components/layout";
 import HeroGrid from "../components/heroGrid";
 
 import theme from "../styles/theme";
-import { Box, Button, Stack, Heading, Text } from "@chakra-ui/react";
+import { Box, Button, Stack, Heading, Text, Image } from "@chakra-ui/react";
 import BaseContainer from "../components/BaseContainer";
 
+import { useMediaQuery } from "@chakra-ui/react";
+
 export default function Home() {
+  const [isDesktop] = useMediaQuery("(min-width: 960px)");
+
   return (
     <Layout home>
       <Head>
@@ -18,23 +22,61 @@ export default function Home() {
       <Box
         id="whoami"
         bg={theme.colors.lightBeige}
-        pt="18rem"
+        pt={["8rem", "22rem"]}
         pb="4rem"
-        mt={-232}
+        mt={["-5rem", -267]}
       >
         <BaseContainer>
-          <p>
-            (This is a sample website - you’ll be building a site like this on{" "}
-            <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-          </p>
+          <Stack align="center" direction={["column", "row"]} spacing="3rem">
+            <Image
+              maxW="30%"
+              objectFit="cover"
+              src="/images/eu.png"
+              alt="Dan Abramov"
+            />
+            <Stack direction="column" spacing={["1rem", "2rem"]}>
+              <Heading as="h2" size="md">
+                Who am I
+              </Heading>
+              <Stack
+                direction={["column", "row"]}
+                justify="center"
+                spacing="2rem"
+              >
+                <Box flex={1}>
+                  <Text fontSize="sm" mb={4}>
+                    In 10 years, I've worked in a lot of design disciplines, as
+                    Graphic, Editorial and Product Design. Here is some examples
+                    of this experience. In 10 years, I've worked in a lot of
+                    design disciplines, as Graphic, Editorial and Product
+                    Design. Here is some examples of this experience. In 10
+                    years, I've worked in a lot of design disciplines, as
+                    Graphic, Editorial and Product Design. Here is some examples
+                    of this experience.
+                  </Text>
+                  <Button colorScheme="blue">My work</Button>
+                </Box>
+                <Box flex={1}>
+                  <Text fontSize="sm" mb={6}>
+                    In 10 years, I've worked in a lot of design disciplines, as
+                    Graphic, Editorial and Product Design. Here is some examples
+                    of this experience. In 10 years, I've worked in a lot of
+                    design disciplines, as Graphic, Editorial and Product
+                    Design. Here is some examples of this experience.
+                  </Text>
+                  <Button colorScheme="blue">Work principles</Button>
+                </Box>
+              </Stack>
+            </Stack>
+          </Stack>
         </BaseContainer>
       </Box>
-      <Box id="work" py="10rem">
+      <Box id="work" py={["4rem", "10rem"]}>
         <BaseContainer>
           <Stack direction={["column", "row"]} spacing="3rem">
             <Stack
               direction="column"
-              spacing="2rem"
+              spacing={["1rem", "2rem"]}
               align="flex-start"
               flex="1"
             >
@@ -52,16 +94,6 @@ export default function Home() {
               <Text>Box 3</Text>
             </Box>
           </Stack>
-        </BaseContainer>
-      </Box>
-      <Box bg={theme.colors.fauxblack} color="white" py="1.5rem">
-        <BaseContainer>
-          <p>
-            reach me at{" "}
-            <a href="mailto:jonathasbsouza@gmail.com">
-              jonathasbsouza@gmail.com
-            </a>
-          </p>
         </BaseContainer>
       </Box>
     </Layout>
