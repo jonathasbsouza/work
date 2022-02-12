@@ -20,7 +20,6 @@
 }
 
 @mixin gridImg {
-  background-position: center center;
   background-size: cover;
 }
 
@@ -33,19 +32,21 @@
 .img2 {
   @include gridImg;
   grid-area: Img2;
-  background-image: url("/images/eu.png");
+  background-image: url("/images/hero/heroimg_2.jpg");
 }
 
 .img3 {
   @include gridImg;
   grid-area: Img3;
-  background-image: url("/images/eu.png");
+  background-image: url("/images/hero/heroimg_3.jpg");
+  background-position: center;
 }
 
 .img4 {
   @include gridImg;
   grid-area: Img4;
-  background-image: url("/images/eu.png");
+  background-image: url("/images/hero/heroimg_4.jpg");
+  background-position: center;
 }
 
 .title {
