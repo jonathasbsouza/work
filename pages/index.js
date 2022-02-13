@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
 import HeroGrid from "../components/heroGrid";
-
+import NextLink from "next/link";
 import theme from "../styles/theme";
 import { Box, Button, Stack, Heading, Text, Image } from "@chakra-ui/react";
 import BaseContainer from "../components/BaseContainer";
@@ -21,7 +21,7 @@ export default function Home() {
         <HeroGrid />
       </BaseContainer>
       <Box
-        id="work"
+        id="whoami"
         bg={theme.colors.lightBeige}
         pt={["8rem", "22rem"]}
         pb={["4rem", "0"]}
@@ -50,8 +50,12 @@ export default function Home() {
                 Design. Here is some examples of this experience.
               </Text>
               <Stack direction="row" spacing="1rem">
-                <Button colorScheme="blue">My work</Button>
-                <Button colorScheme="blue">Work principles</Button>
+                <NextLink href="#work">
+                  <Button>My work</Button>
+                </NextLink>
+                <NextLink href="/work-principles">
+                  <Button>Work principles</Button>
+                </NextLink>
               </Stack>
             </Stack>
           </Stack>
