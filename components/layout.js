@@ -1,10 +1,11 @@
 import Head from "next/head";
 import Link from "next/link";
 import Navbar from "./navbar";
-import { Box } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import BaseContainer from "../components/BaseContainer";
 
 import theme from "../styles/theme";
+import SocialIcons from "./SocialIcons";
 
 const name = "Jonathas Souza";
 export const siteTitle = "Jônathas Souza | Product Designer";
@@ -31,12 +32,21 @@ export default function Layout({ children, home }) {
       <main>{children}</main>
       <Box bg={theme.colors.fauxblack} color="white" py="1.5rem">
         <BaseContainer>
-          <p>
-            reach me at{" "}
-            <a fontWeight="500" href="mailto:jonathasbsouza@gmail.com">
-              jonathasbsouza@gmail.com
-            </a>
-          </p>
+          <Flex
+            direction={["column", "row"]}
+            align="center"
+            justify="space-between"
+          >
+            <Box mb={[4, 0]}>
+              <p d="block">
+                reach me at{" "}
+                <a fontWeight="500" href="mailto:jonathasbsouza@gmail.com">
+                  jonathasbsouza@gmail.com
+                </a>
+              </p>
+            </Box>
+            <SocialIcons color="white" />
+          </Flex>
         </BaseContainer>
       </Box>
       {!home && (

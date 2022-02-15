@@ -6,6 +6,7 @@ import {
   Button,
   Stack,
   Collapse,
+  Image,
   Icon,
   Link,
   Popover,
@@ -23,20 +24,20 @@ import {
 } from "@chakra-ui/icons";
 import BaseContainer from "./BaseContainer";
 
+import theme from "../styles/theme";
+import SocialIcons from "./SocialIcons";
+
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Box>
+    <Box w="100%" position="fixed">
       <Flex
-        bg={useColorModeValue("white", "gray.800")}
+        bg="#EBE3D8"
         color={useColorModeValue("gray.600", "white")}
         minH={"60px"}
         py={{ base: 2 }}
         px={{ base: 4 }}
-        borderBottom={1}
-        borderStyle={"solid"}
-        borderColor={useColorModeValue("gray.200", "gray.900")}
         align={"center"}
       >
         <Flex
@@ -56,46 +57,24 @@ export default function WithSubnavigation() {
 
         <BaseContainer id="test">
           <Flex align="center" justify="space-between">
-            <Text
-              textAlign={useBreakpointValue({ base: "center", md: "left" })}
-              fontFamily={"heading"}
-              color={useColorModeValue("gray.800", "white")}
-            >
-              Logo
-            </Text>
+            <Stack align="center" direction="row" spacing={4}>
+              <Image
+                boxSize="32px"
+                objectFit="fit"
+                src="/images/logo.png"
+                alt="Jonathas Souza"
+              />
+            </Stack>
 
-            <Flex display={{ base: "none", md: "flex" }} ml={10}>
+            <Flex
+              fontFamily={"heading"}
+              color={theme.colors.fauxblack}
+              display={{ base: "none", md: "flex" }}
+              ml={10}
+            >
               <DesktopNav />
             </Flex>
-            <Stack
-              flex={{ base: 1, md: 0 }}
-              justify={"flex-end"}
-              direction={"row"}
-              spacing={6}
-            >
-              <Button
-                as={"a"}
-                fontSize={"sm"}
-                fontWeight={400}
-                variant={"link"}
-                href={"#"}
-              >
-                Sign In
-              </Button>
-              <Button
-                display={{ base: "none", md: "inline-flex" }}
-                fontSize={"sm"}
-                fontWeight={600}
-                color={"white"}
-                bg={"pink.400"}
-                href={"#"}
-                _hover={{
-                  bg: "pink.300",
-                }}
-              >
-                Sign Up
-              </Button>
-            </Stack>
+            <SocialIcons color={theme.colors.fauxblack} />
           </Flex>
         </BaseContainer>
       </Flex>
@@ -122,7 +101,9 @@ const DesktopNav = () => {
                 p={2}
                 href={navItem.href ?? "#"}
                 fontSize={"sm"}
-                fontWeight={500}
+                textTransform="lowercase"
+                fontFamily="heading"
+                fontWeight={400}
                 color={linkColor}
                 _hover={{
                   textDecoration: "none",
@@ -262,41 +243,15 @@ const MobileNavItem = ({ label, children, href }) => {
 
 const NAV_ITEMS = [
   {
-    label: "Inspiration",
-    children: [
-      {
-        label: "Explore Design Work",
-        subLabel: "Trending Design to inspire you",
-        href: "#",
-      },
-      {
-        label: "New & Noteworthy",
-        subLabel: "Up-and-coming Designers",
-        href: "#",
-      },
-    ],
-  },
-  {
-    label: "Find Work",
-    children: [
-      {
-        label: "Job Board",
-        subLabel: "Find your dream design job",
-        href: "#",
-      },
-      {
-        label: "Freelance Projects",
-        subLabel: "An exclusive list for contract work",
-        href: "#",
-      },
-    ],
-  },
-  {
-    label: "Learn Design",
+    label: "Who am I",
     href: "#",
   },
   {
-    label: "Hire Designers",
+    label: "My work",
+    href: "/#work",
+  },
+  {
+    label: "Work principles",
     href: "#",
   },
 ];
