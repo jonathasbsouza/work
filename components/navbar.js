@@ -21,6 +21,7 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
+import BaseContainer from "./BaseContainer";
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
@@ -52,43 +53,51 @@ export default function WithSubnavigation() {
             aria-label={"Toggle Navigation"}
           />
         </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          <Text fontFamily={"heading"}>Logo</Text>
 
-          <Flex display={{ base: "none", md: "flex" }} ml={10}>
-            <DesktopNav />
+        <BaseContainer id="test">
+          <Flex align="center" justify="space-between">
+            <Text
+              textAlign={useBreakpointValue({ base: "center", md: "left" })}
+              fontFamily={"heading"}
+              color={useColorModeValue("gray.800", "white")}
+            >
+              Logo
+            </Text>
+
+            <Flex display={{ base: "none", md: "flex" }} ml={10}>
+              <DesktopNav />
+            </Flex>
+            <Stack
+              flex={{ base: 1, md: 0 }}
+              justify={"flex-end"}
+              direction={"row"}
+              spacing={6}
+            >
+              <Button
+                as={"a"}
+                fontSize={"sm"}
+                fontWeight={400}
+                variant={"link"}
+                href={"#"}
+              >
+                Sign In
+              </Button>
+              <Button
+                display={{ base: "none", md: "inline-flex" }}
+                fontSize={"sm"}
+                fontWeight={600}
+                color={"white"}
+                bg={"pink.400"}
+                href={"#"}
+                _hover={{
+                  bg: "pink.300",
+                }}
+              >
+                Sign Up
+              </Button>
+            </Stack>
           </Flex>
-        </Flex>
-
-        <Stack
-          flex={{ base: 1, md: 0 }}
-          justify={"flex-end"}
-          direction={"row"}
-          spacing={6}
-        >
-          <Button
-            as={"a"}
-            fontSize={"sm"}
-            fontWeight={400}
-            variant={"link"}
-            href={"#"}
-          >
-            Sign In
-          </Button>
-          <Button
-            display={{ base: "none", md: "inline-flex" }}
-            fontSize={"sm"}
-            fontWeight={600}
-            color={"white"}
-            bg={"pink.400"}
-            href={"#"}
-            _hover={{
-              bg: "pink.300",
-            }}
-          >
-            Sign Up
-          </Button>
-        </Stack>
+        </BaseContainer>
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>

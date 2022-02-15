@@ -6,12 +6,9 @@ import theme from "../styles/theme";
 import { Box, Button, Stack, Heading, Text, Image } from "@chakra-ui/react";
 import BaseContainer from "../components/BaseContainer";
 
-import { useMediaQuery } from "@chakra-ui/react";
 import WorkPost from "../components/WorkPost";
 
 export default function Home() {
-  const [isDesktop] = useMediaQuery("(min-width: 960px)");
-
   return (
     <Layout home>
       <Head>
