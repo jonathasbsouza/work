@@ -31,7 +31,7 @@ export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Box w="100%" position="fixed">
+    <Box w="100%" position="fixed" zIndex="sticky">
       <Flex
         bg="#EBE3D8"
         color={useColorModeValue("gray.600", "white")}
