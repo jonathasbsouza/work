@@ -80,7 +80,7 @@ export default function WithSubnavigation() {
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
-        <MobileNav />
+        <MobileNav onClick={onToggle} />
       </Collapse>
     </Box>
   );
@@ -174,7 +174,7 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
   );
 };
 
-const MobileNav = () => {
+const MobileNav = ({ onClick }) => {
   return (
     <Stack
       bg={useColorModeValue("white", "gray.800")}
@@ -182,20 +182,21 @@ const MobileNav = () => {
       display={{ md: "none" }}
     >
       {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
+        <MobileNavItem key={navItem.label} onClick={onClick} {...navItem} />
       ))}
     </Stack>
   );
 };
 
-const MobileNavItem = ({ label, children, href }) => {
-  const { isOpen, onToggle } = useDisclosure();
+const MobileNavItem = ({ label, children, href, onClick }) => {
+  const { isOpen, onToggle, onClose } = useDisclosure();
 
   return (
     <Stack spacing={4} onClick={children && onToggle}>
       <Flex
         py={2}
         as={Link}
+        onClick={onClick}
         href={href ?? "#"}
         justify={"space-between"}
         align={"center"}
@@ -219,24 +220,6 @@ const MobileNavItem = ({ label, children, href }) => {
           />
         )}
       </Flex>
-
-      <Collapse in={isOpen} animateOpacity style={{ marginTop: "0!important" }}>
-        <Stack
-          mt={2}
-          pl={4}
-          borderLeft={1}
-          borderStyle={"solid"}
-          borderColor={useColorModeValue("gray.200", "gray.700")}
-          align={"start"}
-        >
-          {children &&
-            children.map((child) => (
-              <Link key={child.label} py={2} href={child.href}>
-                {child.label}
-              </Link>
-            ))}
-        </Stack>
-      </Collapse>
     </Stack>
   );
 };
@@ -244,14 +227,14 @@ const MobileNavItem = ({ label, children, href }) => {
 const NAV_ITEMS = [
   {
     label: "Who am I",
-    href: "#",
+    href: "/#whoami",
   },
   {
     label: "My work",
-    href: "/#work",
+    href: "#work",
   },
   {
     label: "Work principles",
-    href: "#",
+    href: "/work-principles",
   },
 ];
